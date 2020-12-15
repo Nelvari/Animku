@@ -54,7 +54,7 @@ public class InfoAnime extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         final int position = extras.getInt("position");
 
-        tvJudul.setText(": " + mAnimeList.get(position).getJudul());
+        tvJudul.setText(mAnimeList.get(position).getJudul());
         tvIsiEpisode.setText(": " + mAnimeList.get(position).getJmlepisode());
         tvIsiType.setText(": " + mAnimeList.get(position).getTipe());
         tvIsiDurasi.setText(": " + mAnimeList.get(position).getDurasi());
