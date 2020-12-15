@@ -1,4 +1,4 @@
-package com.example.animku;
+package com.example.animku.Model;
 
 import io.realm.RealmObject;
 

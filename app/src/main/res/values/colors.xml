@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#000000</color>
     <color name="abu">#848484</color>
     <color name="pink">#ff637c</color>
     <color name="merah">#ff414d</color>

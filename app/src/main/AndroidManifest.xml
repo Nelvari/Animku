@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="Q">
         <activity android:name=".GetAnime"/>
-        <activity android:name=".MainFragment"/>
+        <activity android:name=".Fragment.MainFragment"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
