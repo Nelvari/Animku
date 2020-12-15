@@ -1,6 +1,7 @@
 package com.example.animku.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.animku.EpisodeAnime;
 import com.example.animku.Model.AnimeModel;
 import com.example.animku.R;
 
@@ -42,7 +44,7 @@ public class AnimeTerbaruAdapter extends RecyclerView.Adapter<AnimeTerbaruAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TerbaruViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final TerbaruViewHolder holder, final int position) {
         Realm.init(holder.itemView.getContext());
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
@@ -55,9 +57,9 @@ public class AnimeTerbaruAdapter extends RecyclerView.Adapter<AnimeTerbaruAdapte
             holder.cvAnimeBaru.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                Intent in = new Intent(holder.itemView.getContext(), EpisodeAnime.class);
-//                in.putExtra("judul", dataList.get(position).getJudul());
-//                holder.itemView.getContext().startActivity(in);
+                Intent in = new Intent(holder.itemView.getContext(), EpisodeAnime.class);
+                in.putExtra("position", position);
+                holder.itemView.getContext().startActivity(in);
                 }
             });
         }else {
