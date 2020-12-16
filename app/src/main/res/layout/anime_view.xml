@@ -9,9 +9,9 @@
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
         android:id="@+id/cvAnime"
-        android:layout_width="100dp"
+        android:layout_width="125dp"
         android:layout_marginRight="5dp"
-        android:layout_height="175dp"
+        android:layout_height="215dp"
         app:cardCornerRadius="5dp"
         android:focusable="true">
 
@@ -24,12 +24,12 @@
             <ImageView
                 android:id="@+id/ivFoto"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="155dp"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/uzaki"/>
 
             <RelativeLayout
-                android:layout_margin="3dp"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -41,8 +41,8 @@
                     android:text="Judul"
                     android:maxLines="2"
                     android:ellipsize="end"
-                    android:textSize="9dp"
-                    android:textStyle=""
+                    android:textSize="10dp"
+                    android:textStyle="bold"
                     android:textColor="@android:color/white"/>
 
                 <TextView
@@ -50,7 +50,7 @@
                     android:textColor="@android:color/white"
                     android:id="@+id/tvEpisode"
                     android:layout_width="wrap_content"
-                    android:textSize="7dp"
+                    android:textSize="9dp"
                     android:layout_height="wrap_content"
                     android:text="12 Episode"/>
 
@@ -60,7 +60,7 @@
                     android:textColor="@android:color/white"
                     android:id="@+id/tvType"
                     android:layout_width="wrap_content"
-                    android:textSize="7dp"
+                    android:textSize="9dp"
                     android:layout_height="wrap_content"
                     android:text="TV"
                     android:layout_alignParentRight="true" />

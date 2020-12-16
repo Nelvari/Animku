@@ -15,6 +15,13 @@
         android:background="@android:color/black"
         app:titleTextColor="@color/pink"/>
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -140,5 +147,7 @@
         </LinearLayout>
 
     </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

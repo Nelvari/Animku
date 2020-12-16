@@ -1,6 +1,7 @@
 package com.example.animku.Fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.animku.Adapter.AnimeTerbaruAdapter;
 import com.example.animku.Adapter.AnimeTerpopulerAdapter;
@@ -31,6 +33,7 @@ public class HomeFragment extends Fragment {
     RecyclerView rvListTerbaru, rvListTerpopuler;
     AnimeTerbaruAdapter animeTerbaruAdapter;
     AnimeTerpopulerAdapter animeTerpopulerAdapter;
+    SwipeRefreshLayout refresh;
 
     @Nullable
     @Override
@@ -44,6 +47,7 @@ public class HomeFragment extends Fragment {
 
         rvListTerbaru = view.findViewById(R.id.rvListTerbaru);
         rvListTerpopuler = view.findViewById(R.id.rvListTerpopuler);
+        refresh = view.findViewById(R.id.refresh);
 
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);

@@ -50,7 +50,7 @@ public class AnimeTerpopulerAdapter extends RecyclerView.Adapter<AnimeTerpopuler
         realm = Realm.getInstance(configuration);
         holder.cvAnimePopuler.setVisibility(View.VISIBLE);
         holder.tvJudul.setText(dataList.get(position).getJudul());
-        holder.tvEpisode.setText(dataList.get(position).getJmlepisode() + "episode");
+        holder.tvEpisode.setText(dataList.get(position).getJmlepisode() + " episode");
         Glide.with(holder.itemView.getContext()).load(dataList.get(position).getGambar()).into(holder.ivFoto);
         holder.tvType.setText(dataList.get(position).getTipe());
         holder.cvAnimePopuler.setOnClickListener(new View.OnClickListener() {

@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.animku.Fragment.GenreFragment;
 import com.example.animku.Fragment.HomeFragment;
@@ -21,6 +23,7 @@ import io.realm.RealmConfiguration;
 public class MainFragment extends AppCompatActivity {
 
     private Realm realm;
+    boolean doubleBackPressOnce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,23 @@ public class MainFragment extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
+        if (doubleBackPressOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackPressOnce = true;
+        Toast.makeText(this, "Klik back lagi untuk keluar", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackPressOnce=false;
+            }
+        }, 1000);
+
+        /*new AlertDialog.Builder(this)
                 .setTitle("Really Exit?")
                 .setMessage("Are you sure you want to exit?")
                 .setNegativeButton(android.R.string.no, null)
@@ -72,6 +91,6 @@ public class MainFragment extends AppCompatActivity {
                         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(a);
                     }
-                }).create().show();
+                }).create().show();*/
     }
 }
