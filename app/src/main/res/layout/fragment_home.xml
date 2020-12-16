@@ -26,62 +26,79 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="400dp">
 
                 <ImageView
                     android:id="@+id/ivFoto"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="600dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="true"
-                    android:src="@mipmap/dashboard"
+                    android:src="@mipmap/uzaki"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/filter"
                     android:scaleType="fitXY"/>
+
 
                 <TextView
                     android:id="@+id/tvJudul"
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginHorizontal="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Judul Anime"
+                    android:text="Uzaki-chan Wa Ashobitai!"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
-                    android:textSize="25sp"
+                    android:textSize="20dp"
                     android:layout_above="@+id/tvGenre"/>
 
                 <TextView
                     android:id="@+id/tvGenre"
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginHorizontal="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Genre"
+                    android:text="Slice of life"
                     android:textColor="@color/pink"
-                    android:textSize="15sp"
+                    android:textSize="13dp"
                     android:layout_above="@+id/tvSinopsis"/>
 
                 <TextView
                     android:id="@+id/tvSinopsis"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:textSize="15sp"
-                    android:layout_marginHorizontal="20dp"
+                    android:textSize="12dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:maxLines="3"
+                    android:ellipsize="end"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
-                    android:text="Sinopsis"/>
+                    android:text="Pada awal tahun pertamanya di perguruan tinggi, Hana Uzaki bertemu kembali dengan Shinichi Sakurai, seorang kakak kelas yang berada di klub yang sama dengannya selama masa sekolah menengahnya. Namun, yang mengejutkannya, senior yang dulu aktif ini akhirnya menjadi siswa yang, lebih memilih untuk menghabiskan waktu luangnya dengan damai"/>
 
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anime Terbaru"
@@ -90,6 +107,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvListTerbaru"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -103,7 +121,8 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Anime Terpopuler"
@@ -112,6 +131,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvListTerpopuler"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 

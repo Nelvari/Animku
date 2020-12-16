@@ -11,4 +11,14 @@
         android:icon="@drawable/ic_genre"
         android:title="Genre"/>
 
+    <item
+        android:id="@+id/navOngoing"
+        android:icon="@drawable/ic_ongoing"
+        android:title="Ongoing"/>
+
+    <item
+        android:id="@+id/navBookmark"
+        android:icon="@drawable/ic_bookmark"
+        android:title="Bookmark"/>
+
 </menu>
