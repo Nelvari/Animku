@@ -5,9 +5,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,6 +36,8 @@ public class EpisodeAnime extends AppCompatActivity {
     private ArrayList<EpisodeModel> listEpisodes;
     TextView tvJudul, tvInfo, tvSinopsis;
     ImageView ivFoto, ivBackArrow;
+    ImageButton ibBookmark;
+    boolean bookmark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,14 @@ public class EpisodeAnime extends AppCompatActivity {
         tvSinopsis = findViewById(R.id.tvSinopsis);
         ivFoto = findViewById(R.id.ivFoto);
         ivBackArrow = findViewById(R.id.ivBackArrow);
+        ibBookmark = findViewById(R.id.ibBookmark);
+
+        ibBookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cekBookmark(!bookmark);
+            }
+        });
 
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
@@ -89,5 +102,14 @@ public class EpisodeAnime extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void cekBookmark(boolean active){
+        bookmark = active;
+        if(active){
+            ibBookmark.setColorFilter(-256, PorterDuff.Mode.SRC_ATOP);
+            return;
+        }
+        ibBookmark.clearColorFilter();
     }
 }

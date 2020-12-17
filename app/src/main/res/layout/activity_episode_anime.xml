@@ -59,6 +59,17 @@
             android:textSize="20dp"
             android:layout_above="@+id/tvSinopsis"/>
 
+        <ImageButton
+            android:id="@+id/ibBookmark"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_above="@id/tvSinopsis"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/ic_bookmark"
+            />
+
         <TextView
             android:id="@+id/tvSinopsis"
             android:layout_width="match_parent"

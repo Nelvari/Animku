@@ -29,7 +29,7 @@ import io.realm.RealmResults;
 public class HomeFragment extends Fragment {
 
     private Realm realm;
-    private ArrayList mAnimeList;
+    private ArrayList mAnimeList = null;
     RecyclerView rvListTerbaru, rvListTerpopuler;
     AnimeTerbaruAdapter animeTerbaruAdapter;
     AnimeTerpopulerAdapter animeTerpopulerAdapter;
