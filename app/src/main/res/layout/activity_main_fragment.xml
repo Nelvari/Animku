@@ -18,9 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation"
-        android:background="@color/search"
-        app:itemIconTint="@color/abu"
-        app:itemTextColor="@color/abu"/>
+        android:layout_marginBottom="0dp"
+        android:background="@color/back"
+        app:itemIconTint="@color/color_selector"
+        app:itemTextColor="@color/color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>

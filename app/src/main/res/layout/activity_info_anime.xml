@@ -32,7 +32,7 @@
             android:textColor="@android:color/white"
             android:text="Judul Anime"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:layout_marginStart="5dp" />
 
     </LinearLayout>
@@ -53,7 +53,7 @@
                 android:text="Detail"
                 android:textColor="@color/pink"
                 android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="16dp"/>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -66,9 +66,9 @@
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Episode"
                     android:layout_alignParentLeft="true" />
 
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Tipe"
                     android:layout_alignParentLeft="true" />
 
@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Durasi"
                     android:layout_alignParentLeft="true" />
 
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Studio"
                     android:layout_alignParentLeft="true" />
 
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Genre"
                     android:layout_alignParentLeft="true" />
 
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Skor"
                     android:layout_alignParentLeft="true" />
 
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Status"
                     android:layout_alignParentLeft="true" />
 
@@ -153,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
+                    android:textSize="14dp"
                     android:text="Tayang"
                     android:layout_alignParentLeft="true" />
 
@@ -167,7 +167,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -191,7 +191,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -203,7 +203,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_marginBottom="20dp"
@@ -216,7 +216,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -228,7 +228,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -240,7 +240,7 @@
                     android:text=": "
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -252,7 +252,7 @@
                     android:text=":"
                     android:layout_marginHorizontal="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"/>
+                    android:textSize="14dp"/>
 
             </RelativeLayout>
 
@@ -264,7 +264,7 @@
                 android:text="Sinopsis"
                 android:textColor="@color/pink"
                 android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="16dp"/>
 
             <TextView
                 android:layout_marginBottom="20dp"
@@ -272,9 +272,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
+                android:textSize="13dp"
                 android:text="Isi sinopsi"/>
 
         </LinearLayout>
