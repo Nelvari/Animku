@@ -5,30 +5,47 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.animku.Fragment.GenreFragment;
 import com.example.animku.Fragment.HomeFragment;
+import com.example.animku.GetAnime;
+import com.example.animku.Model.AnimeModel;
 import com.example.animku.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
 
 public class MainFragment extends AppCompatActivity {
 
-    private Realm realm;
     boolean doubleBackPressOnce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_fragment);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
@@ -47,6 +64,12 @@ public class MainFragment extends AppCompatActivity {
                     break;
                 case R.id.navGenre:
                     selectedFragment = new GenreFragment();
+                    break;
+                case R.id.navOngoing:
+                    selectedFragment = new OngoingFragment();
+                    break;
+                case R.id.navBookmark:
+                    selectedFragment = new BookmarkFragment();
                     break;
             }
 
@@ -72,7 +95,7 @@ public class MainFragment extends AppCompatActivity {
             public void run() {
                 doubleBackPressOnce=false;
             }
-        }, 1000);
+        }, 3000);
 
         /*new AlertDialog.Builder(this)
                 .setTitle("Really Exit?")

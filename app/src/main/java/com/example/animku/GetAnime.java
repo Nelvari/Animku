@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,20 +30,32 @@ public class GetAnime extends AppCompatActivity {
 
     private ArrayList mAnimeList = new ArrayList<AnimeModel>();
     private Realm realm;
-    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+    }
+
+    public void tes() {
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
 
-        progressDialog = new ProgressDialog(this);
-        mAnimeList.clear();
+        RealmResults<AnimeModel> produkModel = realm.where(AnimeModel.class).findAll();
+        if (produkModel.size() <= 0) {
+            Log.d("RBA", "data produk from API ");
+            fetchDataProdukAPI();
+        }
+        else {
+            Log.d("RBA", "data produk from Realm: " + produkModel.size());
+            mAnimeList.addAll(produkModel);
+        }
 
-        progressDialog.setTitle("Please wait...");
-        progressDialog.show();
+    }
+
+    private void fetchDataProdukAPI() {
+        mAnimeList.clear();
         AndroidNetworking.get("https://animendo.000webhostapp.com/API/viewanime.php")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -70,10 +83,6 @@ public class GetAnime extends AppCompatActivity {
                                 model.setGambar(object.getString("gambar"));
                                 mAnimeList.add(model);
                             }
-                            Intent intent = new Intent(GetAnime.this, MainFragment.class);
-                            startActivity(intent);
-                            finish();
-                            progressDialog.dismiss();
                             realm.executeTransactionAsync(new Realm.Transaction() {
                                 @Override
                                 public void execute(Realm realma) {
@@ -102,6 +111,7 @@ public class GetAnime extends AppCompatActivity {
 
                     }
                 });
-
     }
+
+
 }

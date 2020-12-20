@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.animku.Model.EpisodeModel;
 import com.example.animku.R;
+import com.example.animku.VideoPlayer;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,7 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         holder.tvEpisode.setText(dataList.get(position).getEpisode());
         if (position % 2 == 1){
             holder.linear.setBackgroundColor(Color.parseColor("#000000"));
@@ -45,8 +46,9 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
         holder.cvEpisode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(holder.itemView.getContext(), VideoPlayer.class);
-//                holder.itemView.getContext().startActivity(intent);
+                Intent intent = new Intent(holder.itemView.getContext(), VideoPlayer.class);
+                intent.putExtra("position", dataList.get(position).getPosition());
+                holder.itemView.getContext().startActivity(intent);
             }
         });
     }

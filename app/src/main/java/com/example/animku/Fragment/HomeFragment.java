@@ -1,8 +1,13 @@
 package com.example.animku.Fragment;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,14 +16,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.animku.Adapter.AnimeTerbaruAdapter;
 import com.example.animku.Adapter.AnimeTerpopulerAdapter;
+import com.example.animku.GetAnime;
 import com.example.animku.Model.AnimeModel;
 import com.example.animku.R;
+import com.example.animku.SearchAnime;
 
 import java.util.ArrayList;
 
@@ -29,7 +37,7 @@ import io.realm.RealmResults;
 public class HomeFragment extends Fragment {
 
     private Realm realm;
-    private ArrayList mAnimeList = null;
+    private ArrayList mAnimeList;
     RecyclerView rvListTerbaru, rvListTerpopuler;
     AnimeTerbaruAdapter animeTerbaruAdapter;
     AnimeTerpopulerAdapter animeTerpopulerAdapter;
@@ -38,7 +46,7 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
 
@@ -58,21 +66,67 @@ public class HomeFragment extends Fragment {
         RealmResults<AnimeModel> homeModels = realm.where(AnimeModel.class).findAll();
         mAnimeList.addAll(homeModels);
 
-        animeTerbaruAdapter = new AnimeTerbaruAdapter(getContext(), mAnimeList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        rvListTerbaru.setLayoutManager(layoutManager);
-        rvListTerbaru.setAdapter(animeTerbaruAdapter);
+        animebaru(mAnimeList);
 
-        animePopuler();
+        animePopuler(mAnimeList);
+
+        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAnimeList.clear();
+                        realm.beginTransaction();
+                        realm.deleteAll();
+                        realm.commitTransaction();
+                        GetAnime getAnime = new GetAnime();
+                        getAnime.tes();
+                        animebaru(mAnimeList);
+                        animePopuler(mAnimeList);
+                        refresh.setRefreshing(false);
+                    }
+                }, 3000);
+            }
+        });
 
         return view;
     }
 
-    private void animePopuler() {
+    private void animebaru(ArrayList mAnimeList) {
+        animeTerbaruAdapter = new AnimeTerbaruAdapter(getContext(), mAnimeList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        rvListTerbaru.setLayoutManager(layoutManager);
+        rvListTerbaru.setAdapter(animeTerbaruAdapter);
+    }
+
+    private void animePopuler(ArrayList mAnimeList) {
         animeTerpopulerAdapter = new AnimeTerpopulerAdapter(getContext(), mAnimeList);
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         rvListTerpopuler.setLayoutManager(linearLayoutManager);
         rvListTerpopuler.setAdapter(animeTerpopulerAdapter);
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.dashboard_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.mSearch){
+            Intent intent = new Intent(getContext(), SearchAnime.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

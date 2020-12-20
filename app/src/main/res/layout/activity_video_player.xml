@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".VideoPlayer"
+    android:orientation="vertical">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <LinearLayout
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginRight="10dp"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="360P"
+            android:textColor="@android:color/white"
+            android:background="@color/abu"
+            android:layout_marginEnd="10dp" />
+
+        <Button
+            android:layout_marginRight="10dp"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="480P"
+            android:textColor="@android:color/white"
+            android:background="@color/biru"
+            android:layout_marginEnd="10dp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="720P"
+            android:textColor="@android:color/white"
+            android:background="@color/merah"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp">
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Judul Anime"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_above="@+id/tvSinopsis"/>
+
+        <TextView
+            android:id="@+id/tvSinopsis"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textSize="15sp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@android:color/white"
+            android:layout_above="@+id/tvInfo"
+            android:text="Sinopsis"/>
+
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/pink"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="Info Anime"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Episode Sebelumnya"
+            android:textSize="10sp"
+            android:padding="5dp"
+            android:textColor="@android:color/white"
+            android:background="@color/merah"
+            android:layout_marginEnd="10dp"
+            android:layout_toLeftOf="@+id/btnSelanjutnya"
+            android:layout_toStartOf="@+id/btnSelanjutnya" />
+
+        <Button
+            android:id="@+id/btnSelanjutnya"
+            android:padding="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:textSize="10sp"
+            android:layout_height="25dp"
+            android:text="Episode Selanjutnya"
+            android:textColor="@android:color/white"
+            android:background="@color/merah"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Episode"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="25dp"
+            android:id="@+id/rvListEpisode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>
