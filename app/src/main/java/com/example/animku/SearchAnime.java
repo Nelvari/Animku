@@ -18,6 +18,7 @@ import com.example.animku.Model.AnimeModel;
 import com.example.animku.R;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 import io.realm.Case;
 import io.realm.Realm;
@@ -30,7 +31,6 @@ public class SearchAnime extends AppCompatActivity {
     private RecyclerView rvListSearch;
     private SearchAdapter searchAdapter;
     private ArrayList mAnimeList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,8 +82,13 @@ public class SearchAnime extends AppCompatActivity {
                     RealmResults<AnimeModel> produkModel = realm.where(AnimeModel.class).findAll();
                     mAnimeList.addAll(produkModel);
                     searchAdapter.notifyDataSetChanged();
+                    return true;
                 }
-                return true;
+                mAnimeList.clear();
+                RealmResults<AnimeModel> produkModel = realm.where(AnimeModel.class).contains("judul",newText, Case.INSENSITIVE).findAll();
+                mAnimeList.addAll(produkModel);
+                searchAdapter.notifyDataSetChanged();
+                return false;
             }
         });
         return true;

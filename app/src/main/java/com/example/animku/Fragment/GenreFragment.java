@@ -38,7 +38,7 @@ public class GenreFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.toolbar);
 
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("ANIMKU");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Animku");
 
         rvGenre = view.findViewById(R.id.rvGenre);
 

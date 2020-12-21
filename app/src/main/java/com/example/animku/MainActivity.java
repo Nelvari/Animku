@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int x = 1000;
+            int x = 1000;
 
         new Handler().postDelayed(new Runnable() {
             @Override

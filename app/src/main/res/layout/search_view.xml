@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
         android:focusable="true">
 
         <LinearLayout
@@ -21,9 +22,9 @@
 
             <ImageView
                 android:id="@+id/ivFoto"
-                android:layout_width="100dp"
-                android:layout_height="125dp"
-                android:scaleType="fitXY"
+                android:layout_width="70dp"
+                android:layout_height="95dp"
+                android:scaleType="centerCrop"
                 android:src="@mipmap/dashboard"/>
 
             <RelativeLayout
@@ -37,26 +38,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Judul"
-                    android:textSize="15sp"
+                    android:textSize="14dp"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"/>
 
                 <TextView
                     android:layout_alignParentBottom="true"
-                    android:textColor="@android:color/white"
+                    android:textColor="#FFFFFF"
                     android:id="@+id/tvEpisode"
                     android:layout_width="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="11dp"
                     android:layout_height="wrap_content"
                     android:text="12 Episode"/>
 
                 <TextView
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@android:color/white"
+                    android:textColor="#FFFFFF"
                     android:id="@+id/tvType"
                     android:layout_width="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="11dp"
                     android:layout_height="wrap_content"
                     android:text="TV"
                     android:layout_alignParentRight="true" />

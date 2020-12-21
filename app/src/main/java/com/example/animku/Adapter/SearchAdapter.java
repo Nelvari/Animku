@@ -19,6 +19,7 @@ import com.example.animku.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -27,6 +28,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     Realm realm;
     private List<AnimeModel> dataList;
+    private List<AnimeModel> searchlist;
     View viewku;
 
     public SearchAdapter(ArrayList<AnimeModel> dataList) {
@@ -79,5 +81,4 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             ivFoto = itemView.findViewById(R.id.ivFoto);
         }
     }
-
 }

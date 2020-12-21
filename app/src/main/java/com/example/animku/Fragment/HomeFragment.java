@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.toolbar);
 
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("ANIMKU");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Animku");
 
         rvListTerbaru = view.findViewById(R.id.rvListTerbaru);
         rvListTerpopuler = view.findViewById(R.id.rvListTerpopuler);
