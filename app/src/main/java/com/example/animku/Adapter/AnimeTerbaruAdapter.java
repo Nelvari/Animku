@@ -25,7 +25,6 @@ import io.realm.RealmConfiguration;
 
 public class AnimeTerbaruAdapter extends RecyclerView.Adapter<AnimeTerbaruAdapter.TerbaruViewHolder>{
 
-    Realm realm;
     private List<AnimeModel> dataList;
     Context mContext;
     View viewku;
@@ -45,9 +44,6 @@ public class AnimeTerbaruAdapter extends RecyclerView.Adapter<AnimeTerbaruAdapte
 
     @Override
     public void onBindViewHolder(@NonNull final TerbaruViewHolder holder, final int position) {
-        Realm.init(holder.itemView.getContext());
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
-        realm = Realm.getInstance(configuration);
         if (dataList.get(position).getStatus().equals("Ongoing") || dataList.get(position).getStatus().equals("Finished Airing")) {
             holder.cvAnimeBaru.setVisibility(View.VISIBLE);
             holder.tvJudul.setText(dataList.get(position).getJudul());

@@ -25,7 +25,6 @@ import io.realm.RealmConfiguration;
 
 public class AnimeTerpopulerAdapter extends RecyclerView.Adapter<AnimeTerpopulerAdapter.PopulerViewHolder>{
 
-    Realm realm;
     private List<AnimeModel> dataList;
     Context mContext;
     View viewku;
@@ -45,9 +44,6 @@ public class AnimeTerpopulerAdapter extends RecyclerView.Adapter<AnimeTerpopuler
 
     @Override
     public void onBindViewHolder(@NonNull final PopulerViewHolder holder, final int position) {
-        Realm.init(holder.itemView.getContext());
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
-        realm = Realm.getInstance(configuration);
         holder.cvAnimePopuler.setVisibility(View.VISIBLE);
         holder.tvJudul.setText(dataList.get(position).getJudul());
         holder.tvEpisode.setText(dataList.get(position).getJmlepisode() + " episode");
