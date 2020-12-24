@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="Q">
-        <activity android:name=".VideoPlayer"></activity>
+        <activity android:name=".VideoPlayer" />
         <activity android:name=".SearchAnime" />
         <activity android:name=".InfoAnime" />
         <activity android:name=".EpisodeAnime" />

@@ -1,6 +1,6 @@
 package com.example.animku.Model;
 
-public class GenreModel {
+public class    GenreModel {
 
     String id, genre;
 
