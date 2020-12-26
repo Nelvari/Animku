@@ -14,24 +14,25 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.animku.Adapter.GenreAdapter;
 import com.example.animku.Adapter.OngoingAdapter;
-import com.example.animku.Model.GenreModel;
-import com.example.animku.Model.OngoingModel;
+import com.example.animku.Model.AnimeModel;
 import com.example.animku.R;
 import com.example.animku.SearchAnime;
-import com.example.animku.R;
 
 import java.util.ArrayList;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
+
 public class OngoingFragment extends Fragment {
 
+    private Realm realm;
+    private ArrayList mAnimeList;
     RecyclerView rv;
-    ArrayList<OngoingModel> day;
     OngoingAdapter adapter;
 
     @Nullable
@@ -46,17 +47,16 @@ public class OngoingFragment extends Fragment {
 
         rv = view.findViewById(R.id.rvOngoing);
 
-        day = new ArrayList<>();
-        day.add(new OngoingModel("Senin"));
-        day.add(new OngoingModel("Selasa"));
-        day.add(new OngoingModel("Rabu"));
-        day.add(new OngoingModel("Kamis"));
-        day.add(new OngoingModel("Jumat"));
-        day.add(new OngoingModel("Sabtu"));
-        day.add(new OngoingModel("Minggu"));
-        day.add(new OngoingModel("Random"));
+        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        realm = Realm.getInstance(configuration);
 
-        adapter = new OngoingAdapter(day);
+        if (mAnimeList == null)
+            mAnimeList = new ArrayList<>();
+
+        RealmResults<AnimeModel> homeModels = realm.where(AnimeModel.class).findAll();
+        mAnimeList.addAll(homeModels);
+
+        adapter = new OngoingAdapter(getContext(), mAnimeList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv.setLayoutManager(layoutManager);
         rv.setAdapter(adapter);
