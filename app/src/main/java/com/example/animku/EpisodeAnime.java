@@ -78,7 +78,7 @@ public class EpisodeAnime extends AppCompatActivity {
 
         listEpisodes = new ArrayList<>();
         for (int i = 1; i <= Integer.parseInt(mAnimeList.get(position).getJmlepisode()); i++) {
-            listEpisodes.add(new EpisodeModel(String.valueOf(i), mAnimeList.get(position).getJudul() + " eps " + i, position));
+            listEpisodes.add(new EpisodeModel(String.valueOf(i), mAnimeList.get(position).getJudul() + " eps " + i, mAnimeList.get(position).getJudul(), position));
         }
 
         episodeAdapter = new EpisodeAdapter(listEpisodes);

@@ -2,12 +2,13 @@ package com.example.animku.Model;
 
 public class EpisodeModel {
 
-    String id, episode;
+    String id, episode, Judul;
     int position;
 
-    public EpisodeModel(String id, String episode, int position) {
+    public EpisodeModel(String id, String episode, String judul, int position) {
         this.id = id;
         this.episode = episode;
+        Judul = judul;
         this.position = position;
     }
 
@@ -33,5 +34,13 @@ public class EpisodeModel {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public String getJudul() {
+        return Judul;
+    }
+
+    public void setJudul(String judul) {
+        Judul = judul;
     }
 }
