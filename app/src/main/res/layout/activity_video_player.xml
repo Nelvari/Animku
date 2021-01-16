@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context=".VideoPlayer"
-    android:orientation="vertical">
+    tools:context=".VideoPlayer" android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -38,41 +37,8 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_marginRight="10dp"
-            android:layout_width="100dp"
-            android:layout_height="25dp"
-            android:text="360P"
-            android:textColor="@android:color/white"
-            android:background="@color/abu"
-            android:layout_marginEnd="10dp" />
-
-        <Button
-            android:layout_marginRight="10dp"
-            android:layout_width="100dp"
-            android:layout_height="25dp"
-            android:text="480P"
-            android:textColor="@android:color/white"
-            android:background="@color/biru"
-            android:layout_marginEnd="10dp" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="25dp"
-            android:text="720P"
-            android:textColor="@android:color/white"
-            android:background="@color/merah"/>
-
-    </LinearLayout>
-
     <RelativeLayout
+        android:layout_marginVertical="10dp"
         android:layout_width="match_parent"
         android:layout_height="125dp">
 
@@ -90,7 +56,7 @@
         <TextView
             android:id="@+id/tvSinopsis"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="65dp"
             android:textSize="15sp"
             android:layout_marginHorizontal="20dp"
             android:textColor="@android:color/white"
@@ -111,50 +77,14 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_marginRight="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:text="Episode Sebelumnya"
-            android:textSize="10sp"
-            android:padding="5dp"
-            android:textColor="@android:color/white"
-            android:background="@color/merah"
-            android:layout_marginEnd="10dp"
-            android:layout_toLeftOf="@+id/btnSelanjutnya"
-            android:layout_toStartOf="@+id/btnSelanjutnya" />
-
-        <Button
-            android:id="@+id/btnSelanjutnya"
-            android:padding="5dp"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:textSize="10sp"
-            android:layout_height="25dp"
-            android:text="Episode Selanjutnya"
-            android:textColor="@android:color/white"
-            android:background="@color/merah"
-            android:layout_alignParentRight="true" />
-
-    </RelativeLayout>
-
-
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Episode"
@@ -164,6 +94,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="10dp"
             android:id="@+id/rvListEpisode"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

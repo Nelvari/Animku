@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
         android:focusable="true">
 
         <LinearLayout
@@ -28,7 +27,7 @@
                 android:src="@mipmap/dashboard"/>
 
             <RelativeLayout
-                android:padding="10dp"
+                android:padding="9dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -39,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="Judul"
                     android:textSize="14dp"
-                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
                     android:textColor="@android:color/white"/>
 
                 <TextView
