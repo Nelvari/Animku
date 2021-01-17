@@ -1,9 +1,9 @@
 package com.example.animku.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.animku.Model.GenreModel;
 import com.example.animku.R;
+import com.example.animku.ViewGenre;
 
 import java.util.ArrayList;
 
@@ -33,8 +34,16 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GenreViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final GenreViewHolder holder, final int position) {
         holder.tvGenre.setText(dataList.get(position).getGenre());
+        holder.cvGenre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(holder.itemView.getContext(), ViewGenre.class);
+                in.putExtra("genre", dataList.get(position).getGenre());
+                holder.itemView.getContext().startActivity(in);
+            }
+        });
     }
 
     @Override

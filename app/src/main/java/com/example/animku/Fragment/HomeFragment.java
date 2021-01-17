@@ -1,7 +1,6 @@
 package com.example.animku.Fragment;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -10,13 +9,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -27,6 +26,8 @@ import com.example.animku.GetAnime;
 import com.example.animku.Model.AnimeModel;
 import com.example.animku.R;
 import com.example.animku.SearchAnime;
+import com.example.animku.ViewAllTerbaru;
+import com.example.animku.ViewAllTerpopuler;
 
 import java.util.ArrayList;
 
@@ -42,6 +43,7 @@ public class HomeFragment extends Fragment {
     AnimeTerbaruAdapter animeTerbaruAdapter;
     AnimeTerpopulerAdapter animeTerpopulerAdapter;
     SwipeRefreshLayout refresh;
+    TextView viewAllTerbaru, viewAllTerpopuler;
 
     @Nullable
     @Override
@@ -56,6 +58,8 @@ public class HomeFragment extends Fragment {
         rvListTerbaru = view.findViewById(R.id.rvListTerbaru);
         rvListTerpopuler = view.findViewById(R.id.rvListTerpopuler);
         refresh = view.findViewById(R.id.refresh);
+        viewAllTerbaru = view.findViewById(R.id.viewAllTerbaru);
+        viewAllTerpopuler = view.findViewById(R.id.viewAllTerpopuler);
 
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
@@ -87,6 +91,22 @@ public class HomeFragment extends Fragment {
                         refresh.setRefreshing(false);
                     }
                 }, 3000);
+            }
+        });
+
+        viewAllTerbaru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ViewAllTerbaru.class);
+                startActivity(intent);
+            }
+        });
+
+        viewAllTerpopuler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ViewAllTerpopuler.class);
+                startActivity(intent);
             }
         });
 

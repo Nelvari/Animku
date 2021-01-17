@@ -31,6 +31,7 @@ public class SearchAnime extends AppCompatActivity {
     private RecyclerView rvListSearch;
     private SearchAdapter searchAdapter;
     private ArrayList mAnimeList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

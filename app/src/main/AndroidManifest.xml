@@ -15,6 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="Q">
+        <activity android:name=".ViewGenre"></activity>
+        <activity android:name=".ViewAllTerpopuler" />
+        <activity android:name=".ViewAllTerbaru" />
         <activity android:name=".VideoPlayer" />
         <activity android:name=".SearchAnime" />
         <activity android:name=".InfoAnime" />
