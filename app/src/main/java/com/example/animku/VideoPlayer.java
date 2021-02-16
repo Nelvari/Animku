@@ -70,7 +70,7 @@ public class VideoPlayer extends AppCompatActivity implements BottomSheetDialog.
 
         rvListEpisode = findViewById(R.id.rvListEpisode);
         tvJudul = findViewById(R.id.tvJudul);
-        tvInfo = findViewById(R.id.tvInfo);
+//        tvInfo = findViewById(R.id.tvInfo);
         playerView = findViewById(R.id.player_view);
         progressBar = findViewById(R.id.progress_bar);
         btFullscreen = playerView.findViewById(R.id.bt_fullscreen);
@@ -101,14 +101,14 @@ public class VideoPlayer extends AppCompatActivity implements BottomSheetDialog.
         rvListEpisode.setLayoutManager(layoutManager);
         rvListEpisode.setAdapter(episodeAdapter);
 
-        tvInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(VideoPlayer.this, InfoAnime.class);
-                intent.putExtra("position", position);
-                startActivity(intent);
-            }
-        });
+//        tvInfo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(VideoPlayer.this, InfoAnime.class);
+//                intent.putExtra("position", position);
+//                startActivity(intent);
+//            }
+//        });
 
         Uri videoUri = Uri.parse(p360);
 

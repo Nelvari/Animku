@@ -22,7 +22,7 @@
         app:itemIconSize="26dp"
         app:itemTextAppearanceActive="@style/BottomNavigationView"
         app:itemTextAppearanceInactive="@style/BottomNavigationView.Active"
-        android:background="#141E32"
+        android:background="@color/p_card2"
         app:itemIconTint="@color/color_selector"
         app:itemTextColor="@color/color_selector"
         app:labelVisibilityMode="labeled"

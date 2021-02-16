@@ -27,7 +27,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHolder>{
+public class                                                                                                       EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHolder>{
 
     private ArrayList<EpisodeModel> dataList;
     View viewku;
@@ -51,7 +51,7 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
         if (position % 2 == 1){
             holder.linear.setBackgroundColor(Color.parseColor("#000000"));
         }else {
-            holder.linear.setBackgroundColor(Color.parseColor("#1a284a"));
+            holder.linear.setBackgroundColor(Color.parseColor("#1B1B1B"));
         }
         holder.cvEpisode.setOnClickListener(new View.OnClickListener() {
             @Override
